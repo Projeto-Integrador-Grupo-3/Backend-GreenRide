@@ -27,23 +27,22 @@ public class Usuario {
 	@NotBlank(message = "O atributo nome não deve ser nulo")
 	@Size(min = 5, max = 50, message = "O nome não deve ser menor que 5 e maior que 50  caracteres")
 	private String nome;
-	
+
 	@NotBlank(message = "O atributo usuario não deve ser nulo")
 	@Size(max = 50, message = "O usuario não deve ser maior que 50 caracteres")
 	@Email
 	private String usuario;
-	
+
+	@Size(min = 8,  message = "O senha não deve ser menor que 8 e maioque 12 caracteres")
 	@NotBlank(message = "O atributo senha não deve ser nulo")
-	@Size(min = 8, max = 12, message = "O senha não deve ser menor que 8 e maior que 12 caracteres")
 	private String senha;
-	
-	@NotBlank(message = "O atributo foto não deve ser nulo")
+
 	private String foto;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Corrida> corrida;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -91,7 +90,5 @@ public class Usuario {
 	public void setCorrida(List<Corrida> corrida) {
 		this.corrida = corrida;
 	}
-	
-	
 
 }

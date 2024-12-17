@@ -30,7 +30,6 @@ public class Corrida {
 	@NotNull
 	private Double velocidadeKh;
 	
-	@NotNull
 	private Double valor;
 	
 	private Double tempo;

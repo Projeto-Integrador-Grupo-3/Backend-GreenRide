@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.backend.greenride.model.Corrida;
 import com.backend.greenride.repository.CorridaRepository;
+import com.backend.greenride.service.CorridaService;
 
 import jakarta.validation.Valid;
 
@@ -28,6 +29,10 @@ import jakarta.validation.Valid;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CorridaController {
 
+	@Autowired
+	private CorridaService corridaService;
+
+	
 	@Autowired
 	private CorridaRepository corridaRepository;
 	
@@ -47,6 +52,17 @@ public class CorridaController {
 		return ResponseEntity.ok(corridaRepository.findAllByDestinoContainingIgnoreCase(destino));
 	}
 	
+	@PostMapping("/calcular")
+	public ResponseEntity<Corrida> calcularCorrida(@RequestBody Corrida corrida) {
+
+
+	   Corrida corridaAtualizada = corridaService.processarCorrida(corrida);
+
+
+	   return ResponseEntity.ok(corridaAtualizada);
+	}
+
+	
 	@PostMapping
 	public ResponseEntity<Corrida> post(@Valid @RequestBody Corrida corrida) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(corridaRepository.save(corrida));
@@ -63,9 +79,9 @@ public class CorridaController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
-		Optional<Corrida> postagem = corridaRepository.findById(id);
+		Optional<Corrida> corrida = corridaRepository.findById(id);
 		
-		if(postagem.isEmpty())
+		if(corrida.isEmpty())
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		
 		corridaRepository.deleteById(id);
