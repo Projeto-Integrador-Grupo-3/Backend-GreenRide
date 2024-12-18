@@ -1,6 +1,4 @@
 # Backend-GreenRide
-
-# Backend-GreenRide
 O Green Ride é um aplicativo inovador de caronas que promove a mobilidade sustentável, contribuindo para uma economia verde. A plataforma conecta motoristas e passageiros em busca de uma alternativa mais ecológica e econômica ao transporte individual.
 No Green Ride, os motoristas são incentivados a utilizar veículos com baixo impacto ambiental, como carros elétricos ou híbridos com baixo consumo de combustível. O sistema de rastreamento e escolha de veículos ecológicos permite que os passageiros optem por caronas mais sustentáveis, contribuindo diretamente para a redução da emissão de gases poluentes.
 O Green Ride é mais do que apenas um serviço de transporte; é uma plataforma que promove a mobilidade urbana responsável, oferecendo aos usuários uma maneira fácil de se deslocar sem prejudicar o meio ambiente. Ao combinar conveniência, economia e sustentabilidade, o Green Ride está ajudando a transformar o transporte urbano em uma prática mais verde e consciente.
