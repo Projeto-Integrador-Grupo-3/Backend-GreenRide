@@ -52,15 +52,13 @@ public class CorridaController {
 		return ResponseEntity.ok(corridaRepository.findAllByDestinoContainingIgnoreCase(destino));
 	}
 	
-	@PostMapping("/calcular")
-	public ResponseEntity<Corrida> calcularCorrida(@RequestBody Corrida corrida) {
+	 @PostMapping("/calcular/{id}")
+	    public ResponseEntity<Corrida> calcularCorrida(@PathVariable Long id) {
 
+	        Corrida corridaAtualizada = corridaService.processarCorridaPorId(id);
 
-	   Corrida corridaAtualizada = corridaService.processarCorrida(corrida);
-
-
-	   return ResponseEntity.ok(corridaAtualizada);
-	}
+	        return ResponseEntity.ok(corridaAtualizada);
+	    }
 
 	
 	@PostMapping

@@ -11,4 +11,5 @@ import com.backend.greenride.model.Corrida;
 public interface CorridaRepository extends JpaRepository <Corrida, Long>{
 
 	public List<Corrida> findAllByDestinoContainingIgnoreCase(@Param("destino") String destino);
+	
 }
