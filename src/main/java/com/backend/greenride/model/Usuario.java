@@ -42,7 +42,7 @@ public class Usuario {
 	private String foto;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("usuario")
+	@JsonIgnoreProperties("motorista")
 	private List<Corrida> corrida;
 
 	public Long getId() {

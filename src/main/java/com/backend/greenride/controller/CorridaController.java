@@ -25,7 +25,7 @@ import com.backend.greenride.service.CorridaService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/corridas")
+@RequestMapping("/corrida")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CorridaController {
 

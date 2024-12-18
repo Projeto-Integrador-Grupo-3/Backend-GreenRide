@@ -46,7 +46,7 @@ public class SwaggerConfig {
 				ApiResponses apiResponses = operation.getResponses();
 				
 				apiResponses.addApiResponse("200", createApiResponse("Sucesso!"));
-				apiResponses.addApiResponse("2001", createApiResponse("Objeto Persistido!"));
+				apiResponses.addApiResponse("201", createApiResponse("Objeto Persistido!"));
 				apiResponses.addApiResponse("204", createApiResponse("Objeto Excluido!"));
 				apiResponses.addApiResponse("400", createApiResponse("Erro na Requisição!"));
 				apiResponses.addApiResponse("401", createApiResponse("Acesso Não Autorizado!"));

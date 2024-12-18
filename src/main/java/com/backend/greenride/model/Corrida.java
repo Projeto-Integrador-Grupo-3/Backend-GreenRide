@@ -39,7 +39,7 @@ public class Corrida {
 	private Motorista motorista;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("usuario")
+	@JsonIgnoreProperties("corrida")
 	private Usuario usuario;
 
 	public Long getId() {
